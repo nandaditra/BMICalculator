@@ -1,11 +1,21 @@
 //Create your function below this line.
 //The first parameter should be the weight and the second should be the height.
 
-function bmiCalculator(weight, height) {
-    var w = weight;
-    var h = Math.pow(height,2);
-    var bmi = w/h;
-    return bmi;
+function bmiCalculator (weight, height) {
+    var w =weight;
+    var h =Math.pow(height,2);
+    var bmiResult = w/h;
+    var interpretation;
+    
+    if(bmiResult < 18.5){
+      interpretation="Your BMI is "+bmiResult+", so you are underweight.";
+    } else if(18.5 >= bmiResult ||bmiResult <= 24.9) {
+      interpretation="Your BMI is "+bmiResult+", so you have a normal weight.";    
+    } else {
+      interpretation="Your BMI is "+bmiResult+", so you are overweight.";
+    }
+    
+    return interpretation;
 }
 
 bmiCalculator(65, 1.8);
